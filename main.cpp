@@ -83,8 +83,8 @@ int main(void)
 }
 
 // Performs single used tasks: reading in shader code
-// and building the rendering program, and loading cube vertices
-// into the VBO, as well as positions the cube and camera
+// and building the rendering program, and loading object verticies
+// into the VBO, as well as positions the camera
 void init(GLFWwindow* window)
 {
 	// Program that reads in the vertex and fragment shade .glsl files
@@ -105,7 +105,7 @@ void init(GLFWwindow* window)
 	setupVertices();
 }
 
-// 36 vertices, 12 triangles, makes 2x2x2 cube places at origin
+// Setups the model's vertices
 void setupVertices()
 {
 	vector<int> ind = mySphere.GetIndices();
@@ -218,7 +218,7 @@ void display(GLFWwindow* window, double currentTime)
 
 	mvStack.pop(); // Removes the sun axial rotation from the stack
 
-	// Remove moon scale/rot/tran, planet position, sun position, and view matrices from the stack
+	// Remove's the model off the stack
 	mvStack.pop(); mvStack.pop();
 }
 
